@@ -13,4 +13,12 @@ public class AlbumService {
 		
 		return dao.findAll();
 	}
+
+	public Album findById(Long id) {
+		return dao.findById(id);
+	}
+
+	public void delete(Long id) {
+		dao.delete(id);
+	}
 }
