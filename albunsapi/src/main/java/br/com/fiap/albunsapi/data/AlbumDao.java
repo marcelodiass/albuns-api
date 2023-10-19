@@ -36,4 +36,17 @@ public class AlbumDao {
 	public List<Album> findAll(){
 		return albuns;
 	}
+
+	public Album findById(Long id) {
+		return albuns
+				.stream()
+				.filter(album -> album.id() == id)
+				.findFirst()
+				.orElse(null);
+	}
+
+	public void delete(Long id) {
+		var album = findById(id);
+		albuns.remove(album);
+	}
 }
